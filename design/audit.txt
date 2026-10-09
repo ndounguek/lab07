@@ -1,0 +1,5 @@
+DAYS: leave as is. it's a fix list of 7 days which doesn't change
+highs: convert the temparatures, they will go in the reading list
+DAYS[i] with highs[i]: convert. a reading put the day and the temperature together 
+value returned by hottest_day: leave as is. it returns an index and summarize use the index to find the right day.
+threshold 75: leave as is. it is just a number given to the function
