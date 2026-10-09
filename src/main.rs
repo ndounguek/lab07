@@ -16,10 +16,10 @@ fn main() {
     for i in 0..highs.len() {
         println!("{}: {}", DAYS[i], highs[i]);
     }
-
     println!("Average: {}", average_temp(&highs));
     let day = hottest_day(&highs);
     println!("Hottest day: {}", DAYS[day]);
+println!("Days above 75: {}", count_above(&highs, 75));
 }
 
 fn average_temp(log: &Vec<i32>) -> f64 {
@@ -42,3 +42,12 @@ fn hottest_day(log: &Vec<i32>) -> usize {
     }
     best_index
 }
+fn count_above(log: &Vec<i32>, threshold: i32) -> usize {
+    let mut count = 0;
+    for i in 0..log.len() {
+    if log[i]> threshold {
+         count=count+1;
+	}
+    }
+ count
+} 
