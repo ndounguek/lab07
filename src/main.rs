@@ -33,19 +33,19 @@ fn average_temp(log: &Vec<i32>) -> f64 {
     total as f64 / log.len() as f64
 }
 
-fn hottest_day(log: &Vec<i32>) -> usize {
+fn hottest_day(log: &Vec<Reading>) -> usize {
     let mut best_index = 0;
     for i in 0..log.len() {
-        if log[i] > log[best_index] {
+        if log[i] > log[best_index].high {
             best_index = i;
         }
     }
     best_index
 }
-fn count_above(log: &Vec<i32>, threshold: i32) -> usize {
+fn count_above(log: &Vec<Reading>, threshold: i32) -> usize {
     let mut count = 0;
     for i in 0..log.len() {
-    if log[i]> threshold {
+    if log[i].high> threshold {
          count=count+1;
 	}
     }
