@@ -51,3 +51,10 @@ fn count_above(log: &Vec<Reading>, threshold: i32) -> usize {
     }
  count
 } 
+fn summarize(log: &Vec<Reading>, threshold: i32) -> Summary {
+    Summary {
+        average: average_temp(log),
+        hottest_day: log[hottest_day(log)].day.clone(),
+        days_above: count_above(log, threshold),
+    }
+}
